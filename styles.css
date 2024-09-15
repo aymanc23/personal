@@ -73,6 +73,7 @@ body {
     }
 }
 
+/* Sidebar container */
 .sidebar {
     position: fixed;
     top: 0;
@@ -86,8 +87,35 @@ body {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center all items horizontally */
 }
 
+/* Social links container */
+.sidebar-social {
+    margin-top: auto; /* Pushes social links to the bottom of the sidebar */
+    margin-bottom: 20px; /* Space from the bottom of the sidebar */
+    width: 100%; /* Ensures social links take full width of the sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the social links horizontally */
+    padding: 10px 0;
+}
+
+/* Social links styling */
+.sidebar-social a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    margin: 5px 0; /* Space between social links */
+}
+
+/* Icon styling for social links */
+.sidebar-social i {
+    margin-right: 8px;
+}
+
+/* Close button for the sidebar */
 .sidebar-close {
     display: flex;
     justify-content: flex-end;
@@ -100,11 +128,12 @@ body {
     cursor: pointer;
 }
 
+/* List items for sidebar navigation */
 .sidebar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    flex: 1;
+    width: 100%;
 }
 
 .sidebar ul li {
@@ -115,10 +144,12 @@ body {
     cursor: pointer;
 }
 
+/* Show sidebar when active */
 .sidebar.active {
     transform: translateX(0);
 }
 
+/* Content wrapper styling */
 .content-wrapper {
     display: flex;
     justify-content: center;
@@ -128,6 +159,7 @@ body {
     position: relative;
 }
 
+/* Section styling */
 .section {
     display: none;
     justify-content: center;
@@ -143,6 +175,7 @@ body {
     display: flex;
 }
 
+/* Profile picture styling */
 .profile-pic {
     width: 350px;
     height: 350px;
@@ -152,6 +185,7 @@ body {
     float: left;
 }
 
+/* Section content styling */
 .section-content {
     max-width: 65%;
     margin: auto;
@@ -167,6 +201,7 @@ body {
     margin: 20px 0;
 }
 
+/* Resume button styling */
 .resume-button {
     font-size: 1.6rem;
     padding: 10px 20px;
@@ -177,6 +212,7 @@ body {
     border-radius: 5px;
 }
 
+/* Footer styling */
 .footer {
     display: flex;
     justify-content: space-between;
@@ -186,11 +222,17 @@ body {
     color: black;
 }
 
+/* Social links styling */
 .social-links a {
     font-size: 2rem;
     margin-left: 20px;
     color: black;
 }
+
+.social-links:hover {
+    color: #555; /* Color change on hover for better visibility */
+}
+
 
 @media (max-width: 768px) {
     .profile-pic {
@@ -223,22 +265,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 20px;
+    position: fixed; /* Changed to fixed so it stays in place even when scrolling */
+    bottom: 10px; /* Adjusted for better spacing */
     width: 100%;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it's on top of other elements */
 }
 
 .nav-arrow {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Slightly reduced size for better balance */
     color: black;
     cursor: pointer;
-    margin: 0 20px;
+    margin: 0 15px; /* Reduced margin to fit better */
+    transition: color 0.3s ease; /* Added transition for smoother hover effect */
+}
+
+.nav-arrow:hover {
+    color: #555; /* Color change on hover for better visibility */
 }
 
 @media (max-width: 768px) {
     .nav-arrow {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Adjusted for smaller screens */
+        margin: 0 10px; /* Reduced margin for smaller screens */
     }
 }
 
@@ -495,23 +543,39 @@ a.text-decoration-none:hover {
     content: none;
 }
 
-/* Responsive adjustments */
-@media (min-width: 576px) {
+/* Responsive adjustments for the skills section */
+@media (max-width: 768px) {
+    #skills {
+        padding: 40px 20px; /* Adjust padding for smaller screens */
+    }
+
     #skills h2 {
-        font-size: 2.5rem; /* Adjust font size for medium screens */
+        font-size: 2rem; /* Reduce font size for headings */
+    }
+
+    #skills .skills-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        padding-left: 0; /* Remove left padding */
     }
 
     #skills p {
-        font-size: 1.25rem; /* Adjust font size for medium screens */
+        font-size: 1.25rem; /* Reduce font size for paragraphs */
+        padding-bottom: 1rem; /* Reduce space below paragraphs */
+        white-space: normal; /* Allow text wrapping for better readability */
     }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 576px) {
+    #skills {
+        padding: 20px 10px; /* Further reduce padding for very small screens */
+    }
+
     #skills h2 {
-        font-size: 3rem; /* Ensure larger font size for larger screens */
+        font-size: 1.8rem; /* Further reduce font size for headings */
     }
 
     #skills p {
-        font-size: 1.5rem; /* Ensure consistent font size for larger screens */
+        font-size: 1rem; /* Further reduce font size for paragraphs */
     }
 }

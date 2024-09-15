@@ -7,6 +7,7 @@
     <meta name="theme-color" content="#000000">
     <title>Ayman Charania Website</title>
     <link href="https://fonts.googleapis.com/css?family=Anton|BenchNine:700&display=block" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/e8b74c6543.js" crossorigin="anonymous"></script>
 </head>
@@ -18,11 +19,20 @@
                 <h1>AYMAN CHARANIA</h1>
                 <h4>Software Engineer / Data Scientist</h4>
             </div>
+        
             <div class="header-links">
                 <div id="about-link" onclick="showSection('about')">ABOUT</div>
                 <div id="work-link" onclick="showSection('work')">PROJECTS</div>
                 <div id="skills-link" onclick="showSection('skills')">SKILLS</div>
                 <div id="contact-link" onclick="showSection('contact')">CONTACT</div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/aymancharania/" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/aymanc23" target="_blank" rel="noopener noreferrer" class="social-button github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
                 <div class="line" id="nav-line"></div>
             </div>
             <div class="mobile-trigger" onclick="toggleSidebar()">
@@ -39,6 +49,16 @@
                 <li onclick="showSection('work')">WORK</li>
                 <li onclick="showSection('skills')">SKILLS</li>
                 <li onclick="showSection('contact')">CONTACT</li>
+                <li class="sidebar-social">
+                    <a href="https://www.linkedin.com/in/aymancharania/" target="_blank" rel="noopener noreferrer" class="social-button linkedin">
+                        <i class="fab fa-linkedin-in"></i> 
+                    </a>
+                </li>
+                <li class="sidebar-social">
+                    <a href="https://github.com/aymanc23" target="_blank" rel="noopener noreferrer" class="social-button github">
+                        <i class="fab fa-github"></i> 
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -71,9 +91,9 @@
                                 Employee management system for tracking and managing employees, categories, and salaries
                                 across Munro's Cleaners.</p>
                             <div class="work-images-grid">
-                                <img src="../ms2.jpg" alt="Website Screenshot 10" class="work-img">
-                                <img src="../ms3.jpg" alt="Website Screenshot 11" class="work-img">
-                                <img src="../ms4.jpg" alt="Website Screenshot 12" class="work-img">
+                                <img src="ms2.jpg" alt="Website Screenshot 10" class="work-img">
+                                <img src="ms3.jpg" alt="Website Screenshot 11" class="work-img">
+                                <img src="ms4.jpg" alt="Website Screenshot 12" class="work-img">
                             </div>
                         </div>
                     </div>
@@ -85,9 +105,9 @@
                                 desserts and services in Houston, with options to explore the menu, pricing, and contact
                                 information.</p>
                             <div class="work-images-grid">
-                                <img src="../bb1.jpg" alt="Website Screenshot 1" class="work-img">
-                                <img src="../bb3.jpg" alt="Website Screenshot 3" class="work-img">
-                                <img src="../bb4.jpg" alt="Website Screenshot 4" class="work-img">
+                                <img src="bb1.jpg" alt="Website Screenshot 1" class="work-img">
+                                <img src="bb3.jpg" alt="Website Screenshot 3" class="work-img">
+                                <img src="bb4.jpg" alt="Website Screenshot 4" class="work-img">
                             </div>
                         </div>
                     </div>
@@ -99,23 +119,20 @@
                                 Restoration services website for CRDN of Southeast Texas and Southwest Louisiana,
                                 offering disaster recovery solutions for textiles, arts, contents, and electronics.</p>
                             <div class="work-images-grid">
-                                <img src="../crdn1.png" alt="Website Screenshot 5" class="work-img">
-                                <img src="../crdn2.png" alt="Website Screenshot 6" class="work-img">
-                                <img src="../crdn3.png" alt="Website Screenshot 7" class="work-img">
+                                <img src="crdn1.png" alt="Website Screenshot 5" class="work-img">
+                                <img src="crdn2.png" alt="Website Screenshot 6" class="work-img">
+                                <img src="crdn3.png" alt="Website Screenshot 7" class="work-img">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-
             <div id="skills" class="section">
                 <h2>Skills</h2>
                 <p><strong>Languages:</strong> Python | Java | JavaScript | CSS | HTML | C | Golang | Racket | TypeScript | SQL</p>
                 <p><strong>Technologies:</strong> React | Pandas | Git | node.js | MySQL | Excel | PowerPoint | Word | LaTeX</p>
             </div>
-            
             
             <div id="contact" class="section contact">
                 <h2 class="display-4 pb-3 text-center">Get In Touch</h2>
@@ -134,12 +151,8 @@
         </div>
 
         <div class="footer">
-            <div class="copyright"><i class="far fa-copyright"></i> AYMAN CHARANIA 2024</div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/aymancharania/" target="_blank" rel="noopener noreferrer"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/aymanc23" target="_blank" rel="noopener noreferrer"><i
-                        class="fab fa-github"></i></a>
+            <div class="copyright">
+                <i class="far fa-copyright"></i> AYMAN CHARANIA 2024
             </div>
         </div>
     </div>

@@ -77,7 +77,7 @@ function closeSidebar() {
 }
 
 function openResume() {
-    window.open('Ayman_Charania_Resume.pdf', '_blank');
+    window.open('Resume Software Ayman Charania.pdf', '_blank');
 }
 
 
@@ -100,4 +100,5 @@ function showWorkSlide(index) {
 
 // Initialize the first slide as active
 showWorkSlide(0);
+
 
