@@ -1,0 +1,517 @@
+body {
+    font-family: 'BenchNine', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: black;
+    overflow: hidden; /* Prevent any scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.logo h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    margin: 0;
+    color: black;
+}
+
+.logo h4 {
+    font-family: 'BenchNine', sans-serif;
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 300;
+    color: black;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+}
+
+.header-links div {
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin: 0 15px;
+    text-transform: uppercase;
+    color: black;
+    position: relative;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.header-links div.active {
+    color: #1a0319;
+    font-weight: bold;
+    border-bottom: 4px solid #1a0319;
+}
+
+.mobile-trigger {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .header-links {
+        display: none;
+    }
+
+    .mobile-trigger {
+        display: block;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.sidebar-close i {
+    font-size: 1.5rem;
+    color: black;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.sidebar ul li {
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.section.active {
+    display: flex;
+}
+
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 40px;
+    float: left;
+}
+
+.section-content {
+    max-width: 65%;
+    margin: auto;
+}
+
+.section-content h2 {
+    font-size: 2.4rem;
+}
+
+.section-content p {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.resume-button {
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: black;
+}
+
+.social-links a {
+    font-size: 2rem;
+    margin-left: 20px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 180px;
+        height: 180px;
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+    .section-content h2 {
+        font-size: 2rem;
+    }
+
+    .section-content p {
+        font-size: .9rem;
+        padding: 40px;
+    }
+
+    .resume-button {
+        font-size: .9rem;
+        padding: 15px 25px;
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+        display: block;
+    }
+}
+
+.nav-arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-arrow {
+    font-size: 3rem;
+    color: black;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-arrow {
+        font-size: 2rem;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Adjust slide height */
+.work-slides {
+    position: relative;
+    width: 100%;
+    height: 85%; /* Reduced height to move everything higher */
+}
+
+.slide {
+    display: none;
+    justify-content: flex-start; /* Align items towards the top */
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px; /* Added padding to control the distance from the top */
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide-content {
+    max-width: 65%;
+    margin: auto;
+}
+
+.slide-content h2 {
+    font-size: 2.5rem;
+    margin-top: 0; /* Ensure the title is at the top */
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    line-height: 1.0;
+    margin: 2px 0; /* Reduce the gap between title and subtitle */
+}
+
+/* Updated work section styles for images */
+.work-images-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between images */
+    flex-wrap: nowrap; /* Prevent wrapping to the next row */
+    margin-bottom: 10px; /* Space between the images and the navigation buttons */
+}
+
+.work-img {
+    width: 50%; /* Increase the width of the images */
+    height: 85%; /* Allow height to adjust automatically */
+    max-height: 400px; /* Set a maximum height for consistency */
+    object-fit: contain; /* Ensure the entire image fits within the container */
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0; /* Add a background color in case of empty space around the image */
+}
+
+/* Increased the font size for the title and subtitle */
+.work-slide-title {
+    font-size: 3rem; /* Larger title */
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between title and subtitle */
+}
+
+.work-slide-subtitle {
+    font-size: 1.8rem; /* Larger subtitle */
+    margin-bottom: 15px; /* Increased space below the subtitle */
+    padding-bottom: 20px; /* Padding to increase distance from images */
+}
+
+/* Buttons for work slide navigation */
+.work-slide-buttons {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 20px; /* Adjusted the position to keep buttons at the bottom */
+    width: 100%;
+    z-index: 1000;
+}
+
+.slide-button {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slide-button.active {
+    background-color: #1a0319;
+    color: white;
+}
+
+.slide-button:hover {
+    background-color: #ccc;
+}
+
+
+/* Contact section styling */
+.section.contact {
+    background: linear-gradient(120deg, var(--bs-white), var(--bs-gray-100)); /* Gradient background to match theme */
+    padding: 80px calc(var(--bs-gutter-x) * 0.5); /* Adjust padding with gutter settings */
+    text-align: center; /* Center text alignment for all content in this section */
+    position: relative;
+    
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    min-height: 100vh; /* Ensure section covers full viewport height */
+}
+
+/* Heading style */
+.display-4 {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Specific font family for heading */
+    font-size: 3rem; /* Large font size for prominence */
+    color: var(--bs-dark); /* Dark text color */
+    margin-bottom: 1.5rem; /* Margin for spacing below heading */
+    line-height: 1.2; /* Adjust line height for heading */
+    text-align: center; /* Center text alignment */
+}
+
+/* Contact text style */
+.lead {
+    font-family: 'Georgia', serif; /* Specific font family for paragraph text */
+    font-size: 1.25rem; /* Larger font size for emphasis */
+    color: var(--bs-gray-700); /* Subtle gray text color */
+    line-height: 1.8; /* Improved line height for readability */
+    max-width: 720px; /* Maximum width to center content */
+    margin: 0 auto; /* Center the text block */
+    padding-bottom: 1.5rem; /* Padding for spacing below paragraph */
+}
+
+/* Styling for email link */
+a.text-decoration-none {
+    color: var(--bs-info); /* Subtle blue color for the email link */
+    font-weight: 600; /* Slightly bold for emphasis */
+    text-decoration: none;
+}
+
+a.text-decoration-none:hover {
+    color: var(--bs-primary); /* Change color on hover */
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+    .display-4 {
+        font-size: 2.5rem; /* Adjust font size for medium screens */
+    }
+
+    .lead {
+        font-size: 1.1rem; /* Adjust font size for medium screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 3rem; /* Ensure larger font size for larger screens */
+    }
+
+    .lead {
+        font-size: 1.25rem; /* Ensure consistent font size for larger screens */
+    }
+}
+
+
+/* Skills section styling */
+#skills {
+    background: linear-gradient(120deg, var(--bs-white), var(--bs-gray-100)); /* Gradient background to match theme */
+    padding: 80px calc(var(--bs-gutter-x) * 0.5); /* Adjust padding with gutter settings */
+    text-align: center; /* Center text alignment for all content in this section */
+    position: relative;
+    
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    min-height: 100vh; /* Ensure section covers full viewport height */
+}
+
+#skills h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Specific font family for heading */
+    font-size: 3rem; /* Large font size for prominence */
+    color: var(--bs-dark); /* Dark text color */
+    margin-bottom: 1.5rem; /* Margin for spacing below heading */
+    line-height: 1.2; /* Adjust line height for heading */
+    text-align: center; /* Center text alignment */
+}
+
+/* Container to shift paragraphs to the left */
+#skills .skills-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    max-width: 100%; /* Ensure it can expand to fit the section width */
+    margin: 0 auto; /* Center the content block horizontally */
+    padding-left: 10%; /* Add padding to shift content to the left */
+    box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+/* Paragraph text style */
+#skills p {
+    font-family: 'Georgia', serif; /* Specific font family for paragraph text */
+    font-size: 1.5rem; /* Larger font size for emphasis */
+    color: var(--bs-gray-700); /* Subtle gray text color */
+    line-height: 1.8; /* Improved line height for readability */
+    margin: 0; /* Remove default margin for paragraphs */
+    padding-bottom: 1.5rem; /* Padding for spacing below paragraph */
+    white-space: nowrap; /* Prevent text wrapping to ensure items stay on one line */
+}
+
+/* Separator styling */
+#skills p::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 1.5rem; /* Match height with font size for alignment */
+    background-color: var(--bs-gray-500); /* Subtle gray color for separators */
+    vertical-align: middle; /* Align with text */
+    margin: 0 0.5rem; /* Space around separators */
+}
+
+/* Remove last separator */
+#skills p:last-child::after {
+    content: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 576px) {
+    #skills h2 {
+        font-size: 2.5rem; /* Adjust font size for medium screens */
+    }
+
+    #skills p {
+        font-size: 1.25rem; /* Adjust font size for medium screens */
+    }
+}
+
+@media (min-width: 768px) {
+    #skills h2 {
+        font-size: 3rem; /* Ensure larger font size for larger screens */
+    }
+
+    #skills p {
+        font-size: 1.5rem; /* Ensure consistent font size for larger screens */
+    }
+}

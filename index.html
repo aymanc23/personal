@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>Ayman Charania Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton|BenchNine:700&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e8b74c6543.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo" onclick="window.location.reload()">
+                <h1>AYMAN CHARANIA</h1>
+                <h4>Software Engineer / Data Scientist</h4>
+            </div>
+            <div class="header-links">
+                <div id="about-link" onclick="showSection('about')">ABOUT</div>
+                <div id="work-link" onclick="showSection('work')">PROJECTS</div>
+                <div id="skills-link" onclick="showSection('skills')">SKILLS</div>
+                <div id="contact-link" onclick="showSection('contact')">CONTACT</div>
+                <div class="line" id="nav-line"></div>
+            </div>
+            <div class="mobile-trigger" onclick="toggleSidebar()">
+                <i id="mobile-icon" class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-close" onclick="closeSidebar()">
+                <i class="fas fa-times"></i>
+            </div>
+            <ul>
+                <li onclick="showSection('about')">ABOUT</li>
+                <li onclick="showSection('work')">WORK</li>
+                <li onclick="showSection('skills')">SKILLS</li>
+                <li onclick="showSection('contact')">CONTACT</li>
+            </ul>
+        </div>
+
+        <div class="content-wrapper">
+            <div id="about" class="section active">
+                <img src="Ayman Charania headshot copy.jpg" alt="Ayman Charania" class="profile-pic">
+                <div class="section-content">
+                    <h2>About</h2>
+                    <p>Hello! My name is Ayman Charania. I’m an undergraduate at Rice University, majoring in Computer
+                        Science and minoring in Data Science. I have an insatiable curiosity for software development
+                        and a deep passion for uncovering insights through data. Whether I’m coding up a new project or
+                        diving into complex datasets, I’m always excited to tackle new challenges and learn something
+                        new.</p>
+                    <button class="resume-button" onclick="openResume()">View Resume</button>
+                </div>
+            </div>
+
+            <div id="work" class="section">
+                <div class="work-slide-buttons">
+                    <button onclick="showWorkSlide(0)" class="slide-button active">1</button>
+                    <button onclick="showWorkSlide(1)" class="slide-button">2</button>
+                    <button onclick="showWorkSlide(2)" class="slide-button">3</button>
+                </div>
+                <div class="work-slides">
+                    <!-- Slide 1: Munro's Employee Management System -->
+                    <div class="slide active">
+                        <div class="slide-content">
+                            <h2 class="work-slide-title">Munro's Employee Management System</h2>
+                            <p class="work-slide-subtitle">
+                                Employee management system for tracking and managing employees, categories, and salaries
+                                across Munro's Cleaners.</p>
+                            <div class="work-images-grid">
+                                <img src="../ms2.jpg" alt="Website Screenshot 10" class="work-img">
+                                <img src="../ms3.jpg" alt="Website Screenshot 11" class="work-img">
+                                <img src="../ms4.jpg" alt="Website Screenshot 12" class="work-img">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Batter Bar HTX -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h2 class="work-slide-title">Batter Bar HTX</h2>
+                            <p class="work-slide-subtitle">Bakery website for Batter Bar, featuring a wide variety of
+                                desserts and services in Houston, with options to explore the menu, pricing, and contact
+                                information.</p>
+                            <div class="work-images-grid">
+                                <img src="../bb1.jpg" alt="Website Screenshot 1" class="work-img">
+                                <img src="../bb3.jpg" alt="Website Screenshot 3" class="work-img">
+                                <img src="../bb4.jpg" alt="Website Screenshot 4" class="work-img">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3: CRDN -->
+                    <div class="slide">
+                        <div class="slide-content">
+                            <h2 class="work-slide-title">CRDN</h2>
+                            <p class="work-slide-subtitle">
+                                Restoration services website for CRDN of Southeast Texas and Southwest Louisiana,
+                                offering disaster recovery solutions for textiles, arts, contents, and electronics.</p>
+                            <div class="work-images-grid">
+                                <img src="../crdn1.png" alt="Website Screenshot 5" class="work-img">
+                                <img src="../crdn2.png" alt="Website Screenshot 6" class="work-img">
+                                <img src="../crdn3.png" alt="Website Screenshot 7" class="work-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="skills" class="section">
+                <h2>Skills</h2>
+                <p><strong>Languages:</strong> Python | Java | JavaScript | CSS | HTML | C | Golang | Racket | TypeScript | SQL</p>
+                <p><strong>Technologies:</strong> React | Pandas | Git | node.js | MySQL | Excel | PowerPoint | Word | LaTeX</p>
+            </div>
+            
+            
+            <div id="contact" class="section contact">
+                <h2 class="display-4 pb-3 text-center">Get In Touch</h2>
+                <p class="lead text-center pb-3">I'm currently looking for Software Engineering or Data Science internship roles! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at: <a class="text-decoration-none" href="mailto:aymancharania123@gmail.com">aymancharania123@gmail.com</a>.</p>
+            </div>
+        </div>
+
+        <!-- Navigation arrows at the bottom -->
+        <div class="nav-arrows">
+            <div class="nav-arrow left-arrow" onclick="previousSection()">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="nav-arrow right-arrow" onclick="nextSection()">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="copyright"><i class="far fa-copyright"></i> AYMAN CHARANIA 2024</div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/aymancharania/" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/aymanc23" target="_blank" rel="noopener noreferrer"><i
+                        class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
