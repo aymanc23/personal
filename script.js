@@ -77,7 +77,7 @@ function closeSidebar() {
 }
 
 function openResume() {
-    window.open('(NEWER) Ayman_Charania_with_internships  copy.pdf', '_blank');
+    window.open('Newest_updated_resume.pdf', '_blank');
 }
 
 
