@@ -77,7 +77,7 @@ function closeSidebar() {
 }
 
 function openResume() {
-    window.open('Resume Software Ayman Charania.pdf', '_blank');
+    window.open('(NEWER) Ayman_Charania_with_internships  copy.pdf', '_blank');
 }
 
 
