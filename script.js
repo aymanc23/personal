@@ -77,7 +77,7 @@ function closeSidebar() {
 }
 
 function openResume() {
-    window.open('Newest_updated_resume.pdf', '_blank');
+    window.open('Ayman_Charania__full_time.pdf', '_blank');
 }
 
 
